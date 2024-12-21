@@ -13,7 +13,7 @@ void swapData(Node *Node1, Node *Node2)
 void BubbleSort(LinkedList &ll) {
     Node * current = ll.head;
     int sorted = 0;
-    Node * lastSorted = NULL;
+
     for (int outer = 0; sorted == 0; outer++) {
         sorted = 1;
         Node * current = ll.head;
@@ -25,7 +25,6 @@ void BubbleSort(LinkedList &ll) {
             }
             current = current->next;
         }
-        lastSorted = current;
     }
 }
 
