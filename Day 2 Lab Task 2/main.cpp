@@ -1,10 +1,5 @@
 #include <iostream>
 
-/* Improvements for to be applied:
-    1==> Using header files for the prototypes and cpp files for implementations and testing
-    2==> Using exception handling with throwing error messages and try and catch blocks instead of the -1 and hard coded messages
-    3==> Implementing the queue using array
-*/
 
 using namespace std;
 

@@ -1,4 +1,12 @@
 # depslib dependency file v1.0
-1734620010 source:d:\data structures in c\day 1 lab\main.cpp
+1734760400 source:d:\data structures in c\day 1 lab\main.cpp
 	<iostream>
+	"LinkedList.h"
+
+1734759704 d:\data structures in c\day 1 lab\linkedlist.h
+	<iostream>
+
+1734760488 source:d:\data structures in c\day 1 lab\linkedlist.cpp
+	<iostream>
+	"LinkedList.h"
 
