@@ -71,7 +71,7 @@ public:
         if (Front == NULL)
         {
             cout << "Queue is already empty!\n";
-            return -1;
+            return 0;
         }
         return Front->data;
     }
@@ -80,7 +80,7 @@ public:
         if (Front == NULL)
         {
             cout << "Queue is already empty!\n";
-            return -1;
+            return 0;
         }
         return Rear->data;
     }
@@ -101,6 +101,103 @@ public:
             cout << endl;
         }
     }
+};
+
+class QueueCircularArray
+{
+public:
+    int Size;
+    int Front;
+    int Rear;
+    int * items;
+    QueueCircularArray(int Size = 5)
+    {
+        this->Size = Size;
+        Front = Rear = -1;
+        items = new int[Size];
+    }
+    int isEmpty()
+    {
+        if(Rear == Front && Rear == - 1) return 1;
+        else return 0;
+    }
+    int isFull()
+    {
+        if ((Rear == Front - 1) || (Rear == Size - 1 && Front == 0)) return 1;
+        else return 0;
+    }
+    int enqueue(int data)
+    {
+        if (isFull())
+        {
+            cout << "Queue is full!\n";
+            return 0;
+        }
+        if (isEmpty()) // adding the first element
+        {
+            Front = Rear = 0;
+        }
+        else if (Rear == Size - 1 && Front != 0) //wrapping things up
+        {
+            Rear = 0;
+        }
+        else
+        {
+            Rear++;
+        }
+        items[Rear] = data;
+    }
+    int dequeue()
+    {
+        if (isEmpty())
+        {
+            cout << "Queue is empty!\n";
+            return 0;
+        }
+        items[Front] = 0;
+        if (Rear == Front) Rear = Front = -1; //dequeue last element
+        else if (Front == Size - 1) //wrap things up
+        {
+            Front = 0;
+        }
+        else { //normal case
+            Front++;
+        }
+    }
+    int GetRear()
+    {
+        if (Rear == -1)
+        {
+            cout << "Queue is empty!\n";
+            return 0;
+        }
+        else return items[Rear];
+    }
+    int GetFront()
+    {
+        if (Front == -1)
+        {
+            cout << "Queue is empty!\n";
+            return 0;
+        }
+        else return items[Front];
+    }
+    void display()
+    {
+        if (isEmpty())
+            cout << "Queue is empty!\n";
+        else
+        {
+            cout << "Queue elements: ";
+            for (int i = Front; i != (Rear + 1) % Size; i = (i + 1) % Size)
+            {
+                cout << items[i] << " ";
+            }
+            cout << endl;
+        }
+    }
+
+
 };
 
 int main()
@@ -129,5 +226,29 @@ int main()
     cout << q1.GetFront() << endl;
     cout << q1.GetRear() << endl;
     q1.display();
+    cout << "Testing the queue implementation using circular array:\n";
+    QueueCircularArray q2(10);
+    q2.enqueue(24);
+    q2.enqueue(23);
+    q2.enqueue(26);
+    q2.enqueue(27);
+    q2.enqueue(28);
+    q2.enqueue(29);
+    q2.enqueue(22);
+    q2.display();
+    q2.dequeue();
+    q2.dequeue();
+    q2.dequeue();
+    q2.display();
+    cout << q2.GetFront() << endl;
+    cout << q2.GetRear() << endl;
+    q2.dequeue();
+    q2.dequeue();
+    q2.dequeue();
+    q2.dequeue();
+    q2.dequeue();
+    cout << q2.GetFront() << endl;
+    cout << q2.GetRear() << endl;
+    q2.display();
     return 0;
 }
