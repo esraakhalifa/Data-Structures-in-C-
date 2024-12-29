@@ -23,6 +23,7 @@ public:
     int InsertBefore(int data, int beforeData);
     int GetCount();
     int GetDataByIndex(int index);
+    Node* GetNodeByIndex(int index);
     void display();
 
 };

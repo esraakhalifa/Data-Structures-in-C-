@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1734764908 source:d:\data structures in c\day 3 lab task 3\linkedlist.cpp
+1734778041 source:d:\data structures in c\day 3 lab task 3\linkedlist.cpp
 	<iostream>
 	"LinkedList.h"
 
-1734764901 d:\data structures in c\day 3 lab task 3\linkedlist.h
+1735352240 d:\data structures in c\day 3 lab task 3\linkedlist.h
 	<iostream>
 
-1734768517 source:d:\data structures in c\day 3 lab task 3\main.cpp
+1734782080 source:d:\data structures in c\day 3 lab task 3\main.cpp
 	<iostream>
 	"LinkedList.h"
 

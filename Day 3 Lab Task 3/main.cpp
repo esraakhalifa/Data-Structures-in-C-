@@ -8,7 +8,11 @@ void swapData(Node *Node1, Node *Node2)
     Node1->data = Node2->data;
     Node2->data = temp;
 }
-//void swapNode(Node &Node1, Node &Node2);
+/*void swapNode(LinkedList *ll, Node *Node1, Node *Node2)
+{
+    ll.removeNode(Node1->data);
+    ll.InsertAfter(Node1->data, Node2->data);
+}*/
 
 void BubbleSort(LinkedList &ll) {
     Node * current = ll.head;

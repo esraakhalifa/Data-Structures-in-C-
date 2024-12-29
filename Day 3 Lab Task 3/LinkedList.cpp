@@ -105,6 +105,7 @@ int LinkedList::InsertAfter(int data, int afterData)
     return 0;
 }
 
+
 int LinkedList::InsertBefore(int data, int beforeData)
 {
     Node* newNode = new Node(data);
@@ -153,6 +154,22 @@ int LinkedList::GetDataByIndex(int index)
         currentIndex++;
     }
     return -1;
+}
+Node* LinkedList::GetNodeByIndex(int index)
+{
+    Node* current = head;
+    int currentIndex = 0;
+    while (current != NULL)
+    {
+        if (currentIndex == index)
+        {
+            return current;
+        }
+        current = current->next;
+        currentIndex++;
+    }
+    return NULL;
+
 }
 
 void LinkedList::display()
